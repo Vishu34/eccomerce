@@ -1,0 +1,2594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Demo styles -->
+    <style>
+       body,html{
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            
+        }
+        body::-webkit-scrollbar{
+            width:20px;
+            border-radius:20px;
+        }
+        body::-webkit-scrollbar-button{
+background-color:lightgoldenrodyellow;
+width:10px;
+border-radius:20px;
+        }
+        body::-webkit-scrollbar-thumb{
+           background-color: orangered;
+width:10px;
+border-radius:20px;
+        }
+        body::-webkit-scrollbar-track{
+            background-color: white;
+            width:10px;
+            border-radius:20px;
+        }
+        body::-webkit-scrollbar-corner{
+            background-color: yellow;
+            width:10px;
+            border-radius:20px;
+        }
+        body{
+        
+      
+      background-color:white;
+            color:black;
+        }
+       
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+      #home{
+       /* background-color:whitesmoke; */
+      overflow: hidden;
+      /* position: relative; */
+      position: fixed;
+      top:0;
+      left: 0;
+      width: 100%;
+      z-index:999999999;
+   
+      }
+      #home1{
+        display: none;
+      }
+      #head{
+        background-color:lavender;
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        position: relative;
+        /* padding:5px; */
+      }
+
+
+
+
+
+     
+
+
+.left{
+        position:absolute;
+        top:2px;
+        left:128px;
+      }
+ .right{
+  display:inline-flex;
+  position:absolute;
+  top:2px;
+  right:128px;
+
+ }
+ .div1,.div2,.div3,.div4,.div5,.div6,.div7,.div8{  
+  font-size: 20px;  
+  padding:15px;
+  margin:5px;
+  text-transform: capitalize;
+ }
+      .div2,.div3,.div4,.div5,.div6{
+        display: flex;
+        justify-content: center;
+      
+      }
+    a{
+      text-decoration: none;
+    } 
+     a:hover{
+      color:orangered;
+     }
+      .bi{
+        color:orangered;
+      
+        font-size: 20px;
+      }
+      .logo{
+        display: flex;
+        padding:5px;
+        margin:5px;
+      }
+      .logoimg{
+        width:250px;
+        padding:5px;
+        margin:5px;
+      }
+      .logoimg1{
+        width: 100%;
+      }
+
+      .swiper {
+        width: 100%;
+        height:500px;
+        position: relative;
+      }
+      .swiper1 {
+        width: 100%;
+        height:500px;
+        position: relative;
+      }
+      .swiper2 {
+        width: 100%;
+        height:500px;
+        position: relative;
+      }
+      
+      .swiper-slide  {
+        display: flex;
+        flex-direction: column;
+        text-transform: capitalize;
+       z-index: 99999999;
+      }
+      
+      .upto{
+        font-weight: 500;
+      }
+      .fashion{
+font-size: 50px;
+font-weight: 900;
+      }
+      #btn{
+        background-color:orangered;
+        border:none;
+        outline: none;
+        padding:15px;
+        margin:10px;
+        color:white;
+        font-size: 25px;
+      }
+      #btn:hover{
+        background-color: black;
+      }
+.man{
+  background-color:skyblue;
+  box-shadow: 10px 10px 50px -7px skyblue;
+}
+.woman{
+  background-color:aqua;
+  box-shadow: 10px 10px 50px -7px aqua;
+}
+
+.girl{
+  background-color:orange;
+  box-shadow: 10px 10px 50px -7px orange;
+}
+.shoes{
+  background-color:paleturquoise;
+  box-shadow: 10px 10px 50px -7px paleturquoise;
+}
+.shoes2{
+  background-color:pink;
+}
+
+      .swiper-slide{
+       
+        text-align: center;
+        font-size: 18px;
+        
+overflow: hidden;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+.man1{
+  transform: translateX(-230px);
+  z-index:99;
+}
+       .img1 {
+        display: block;
+        width:37%;
+        
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top:5px;
+        right:94px;
+        z-index:9999999;
+        
+      }
+      .img2 {
+        display: block;
+        width:50%;
+        height: 100%;
+        
+        object-fit: cover;
+        position: absolute;
+        top:5px;
+        right:94px;
+        z-index:9999999;
+      }
+       .img4 {
+        display: block;
+        width:50%;
+        height: 100%;
+        
+        object-fit: cover;
+        position: absolute;
+        top:5px;
+        right:94px;
+        z-index:9999999;
+      }
+      .swipper-slide:hover.img1 , .swipper-slide:hover .img2, .swipper-slide:hover.img3,.swipper-slide:hover.img4{
+transform: scale(1.5);
+      }
+      .img3 {
+        display: block;
+        width:70%;
+        height: 100%;
+        
+        object-fit: cover;
+        position: absolute;
+        top:5px;
+        right:94px;
+        z-index:9999999;
+      }
+      .img6 {
+       
+    position: absolute;
+    top: 5px;
+    left: -45px;
+    width:40%;
+    height: 100%;
+    z-index: 999999;
+    object-fit: cover;
+}
+      
+      .circle1,.circle2,.circle3,.circle4{
+       
+        width: 500px;
+        height: 500px;
+        margin:10px;
+        box-shadow: 10px 10px 7px -7px black,-10px -10px 7px -7px black;
+        border-radius: 50%;
+        position:absolute;
+        top:5px;
+        
+      }
+      .circle1{
+        padding:30px;
+        right:99px;
+        background-color:skyblue;
+      }
+      .circle2{
+        padding:30px;
+        right:34px;
+        background-color: aqua;
+      }
+      .circle3{
+        padding:30px;
+        right:40px;
+      }
+      .circle4{
+        padding:30px;
+        right:40px;
+      }
+      .child{
+      display: flex;
+      padding:30px;
+    
+      }
+      .below1{
+        background-color:pink;
+        width:100%;
+      }
+      .below2{
+        background-color: aquamarine;
+        width:100%;
+      }
+      .below3{
+        background-color:pink;
+        width:100%;
+      }
+      .below3{
+       
+        
+      
+        
+        position: relative;
+        padding:120px;
+        margin:10px;
+        text-align: right;
+      }
+      
+      .below1:hover .img5 ,.below2:hover .img5 {
+        top:-38px;
+        height: 100%;
+        transform: scale(1.2);
+      }
+      .below1,.below2{
+       /* overflow: hidden; */
+        /* width:50%; */
+        position: relative;
+        padding:120px;
+        margin:10px;
+        text-align: right;
+      }
+      .onlycontent{
+transform: translateX(112px);
+      }
+      .onlycontent1{
+transform: translateX(-200px);
+      }
+      .utpo2{
+        color: orangered;
+        font-weight: 900;
+      }
+      .fashion2{
+        font-size:30px;
+        font-weight: 900;
+      }
+      .upto2,.fashion2{
+        text-transform:capitalize;
+      }
+      .img5{
+        
+    position: absolute;
+    top: -60px;
+    left: -143px;
+    width: 100%;
+    height: 116%;
+    /* object-fit: cover; */
+}
+       
+      
+      .upto1{
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .fashion1{
+font-size: 30px;
+font-weight: 900;
+      }
+      #btn1{
+        background-color:orangered;
+        border:none;
+        outline: none;
+        padding:10px;
+        margin:10px;
+        color:white;
+        font-size: 20px;
+      }
+      #btn1:hover{
+        background-color: black;
+      }
+
+      /* products.................. */
+
+      .exclusive{
+        background-color:rgba(0,0,0,0.4);
+        color:white;
+        width:100%;
+      }
+      .prodnavbar{
+        padding-top: 21px;
+    display: flex;
+    padding-left: 70px;
+    
+    margin-left: 70px;
+
+      }
+      .showall,.boys,.girlswoman,.shoesbg{
+        font-size: 15px;
+    font-weight: 900;
+    text-transform: capitalize;
+    border: 1px solid black;
+    border-radius: 37%;
+    padding: 9px;
+    margin: 8px;
+      }
+      :is(.showall,.boys,.girlswoman,.shoesbg):hover{
+background-color: orangered;
+color: white;
+      }
+      .h1 , .p{
+        padding:15px;
+        font-weight: 900;
+        margin:5px;
+        text-align: center;
+      }
+      .eproducts{
+display:grid;
+grid-template-columns: 200px 200px 200px 200px;
+
+column-gap:97px;
+row-gap: 80px;
+padding:80px;
+margin:10px;
+      }
+      
+      .first{
+        padding:10px;
+        margin:5px;
+        background-color:white;
+        box-shadow: 10px 10px 7px -7px black,-10px -10px 7px -7px black;
+       width:250px;
+       height: 500px;
+      
+      }
+      
+.img11,.img12,.img13,.img14,.img15,.img16,.img17,.img18,.img19,.img20,.img21,.img22{
+width:100%;
+height: 350px;
+object-fit: cover;
+}
+.productsprt{
+  position: relative;
+  transition: 0.5s;
+}
+.productsprt:hover .shop{
+transform: scale(1);
+transition: 0.5s;
+}
+.shop{
+  transition: 0.5s;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+display:flex;
+transform: scale(0);
+  background-color:rgba(0,0,0,0.8);
+}
+.search,.heart,.eye,.cart{
+  
+  padding-top:70px;
+  margin-top:70px;
+}
+.bi-search-heart
+,.bi-basket2-fill,.bi-eye-fill,.bi-balloon-heart-fill{
+  background-color:orangered;
+  color:white;
+  padding:10px;
+  margin:10px;
+}
+:is(.bi-search-heart
+,.bi-basket2-fill,.bi-eye-fill,.bi-balloon-heart-fill):hover{
+  background-color: black;
+}
+.productname,.p1{
+  padding:5px;
+  margin:5px;
+  text-transform: capitalize;
+}
+.doller,.doller1,.strong{
+  padding:2px;
+  margin:2px;
+}
+.doller1 ,.strong{
+  font-size: 15px;
+  font-weight: 500;
+}
+.doller1{
+  color:red;
+}
+.doller{
+  font-size: 20px;
+  font-weight: 900;
+}
+.star{
+  padding:5px;
+  margin:5px;
+}
+/* .featured................................. */
+
+.featured{
+background-color: rgba(0,0,0,0.4);
+color:white;
+        width:100%;
+}
+.eproducts1{
+ display: inline-flex;
+    position: relative;
+    padding-left: 290px;
+    padding-bottom: 80px;
+    margin-left: 290px;
+    margin-top: 90px;
+}
+
+.gola{
+  display: flex;
+  padding:5px;
+  margin:5px;
+  position: absolute;
+  bottom: 12px;
+  left: 290px;
+}
+.cir,.cir1{
+  background-color:white;
+  height: 5px;
+  width: 5px;
+  border:1px solid black;
+  border-radius: 50%;
+  padding:5px;
+  margin:5px;
+
+}
+.prenext{
+  position: absolute;
+    bottom: 0px;
+    left: 386px;
+    z-index: 9999999999;
+}
+.bi-chevron-left ,.bi-chevron-right{
+  color:white;
+}
+.pre{
+  padding: 5px;
+    margin: 5px;
+  background-color:orangered;
+  color: white;
+}
+
+.next{
+  padding: 5px;
+    margin: 5px;
+  background-color: orangered;
+  color: white;
+}
+:is(.pre,.next):hover{
+  background-color: black;
+}
+ .featuredprt{
+  position: relative;
+}
+.featuredprt:hover .shop1{
+left:0;
+opacity: 0.9;
+  transition: 0.5s;
+}
+.shop1{
+  transition: 0.5s;
+  position:absolute;
+  top:0;
+  left:77px;
+  opacity: 0;
+  width:100%;
+  height: 100%;
+  background-color:rgba(0,0,0,0.4);
+  
+} 
+.search1,.eye1,.cart1,.heart1{
+  padding-top: 30px;
+    margin-top: 15px;
+    margin-left: 193px;
+}
+
+/* .review................................ */
+
+.review{
+  background-color: rgba(0,0,0,0.4);
+  color:white;
+        width:100%;
+      }
+      .slide{
+        padding:20px;
+        margin:20px;
+        display:grid;
+        grid-template-columns: 200px 200px;
+        column-gap: 450px;
+        row-gap: 20px;
+      }
+      .slide1{
+        background-color: white;
+        padding:40px;
+        margin:40px;
+        width:400px;
+       
+        box-shadow: 10px 10px 7px -7px black,-10px -10px 7px -7px black;
+position: relative;      }
+
+      .content{
+        padding-top: 20px;
+    padding-bottom: 82px;
+    margin: 20px
+      }
+.smallpic{
+  width:70px;
+  height: 70px;
+  position: absolute;
+    top: 118px;
+    left: 146px;
+    object-fit: cover;
+  
+}
+.fname{
+  position: absolute;
+    top: 100px;
+    right: 80px;
+    text-transform: capitalize;
+    font-weight:800;
+    padding:10px;
+    margin:10px;
+}
+.fname2{
+  color: orangered;
+}
+
+/* .contactus.......................... */
+
+.contactus{
+  background-color: rgba(0,0,0,0.4);
+  color:white;
+        width:100%;
+      }
+      .contactprt{
+        padding:40px;
+        margin:40px;
+        display:grid;
+        grid-template-columns: 200px 200px 200px;
+        column-gap: 215px;
+      }
+      .bi-geo-alt-fill,.bi-telephone-fill,.bi-envelope-fill{
+        border-radius:50%;
+        border:2px solid black;
+        padding:10px;
+        margin:5px;
+        color:black;
+      }
+      
+      :is(.bi-geo-alt-fill,.bi-telephone-fill,.bi-envelope-fill):hover{
+        background-color:orangered;
+        color: white;
+      }
+      .Name1{
+        padding:10px;
+        margin:10px;
+        font-size:15px;
+        font-weight: 900;
+      }
+      iframe{
+        border-radius: 5%;
+      }
+      .address,.number,.email{
+        border:2px solid black;
+        padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+        margin:10px;
+        text-align: center;
+        width: 300px;
+        height: 200px;
+      }
+      .prtprogress{
+        background-color:aliceblue;
+        padding:25px;
+        margin:20px;
+        width: 500px;
+        border-radius: 30px;
+      }
+      .msg{
+        font-size: 30px;
+        font-weight: 900;
+        text-transform: capitalize;
+        color:black;
+      }
+      input ,textarea{
+        width:100%;
+        padding:5px;
+        margin:5px;
+        outline: none;
+        border:none;
+        border:1px solid black;
+        border-radius: 20px;
+font-size: 15px;
+      }
+      input:focus{
+        background-color:gainsboro;
+      }
+      textarea{
+        padding-bottom: 50px;
+      }
+   .btn5{
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 900;
+        padding:7px;
+        margin:7px;
+        border-radius:10px;
+        border: none;
+        outline: none;
+        background-color:orangered;
+      }
+   .btn5:hover{
+        color:white
+      }
+      .mapcenter{
+        display: grid;
+        grid-template-columns: 200px 200px;
+        column-gap: 430px;
+      }
+      .map{
+       padding-top: 30px;
+
+      }
+      
+/* blog............... */
+
+.blog{
+  background-color: rgba(0,0,0,0.4);
+  color:white;
+        width:100%;
+      }
+      .eproducts3{
+        display:grid;
+        grid-template-columns: 200px 200px 200px;
+        column-gap: 216px;
+        row-gap: 10px;
+  padding:15px;
+  margin:20px;
+      }
+      .blogpic{
+        width:360px;
+        /* height: 400px; */
+        position: relative;
+      
+      }
+      .imgb{
+        height: 245px;
+        width:100%;
+        object-fit:cover;
+      
+      }
+      .btnblog{
+        background-color: orangered;
+        color:white;
+        padding: 14px;
+    margin: 10px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    border-radius: 10%;
+    font-size: 15px;
+
+      }
+      .btnblog:hover{
+        background-color: black;
+      }
+      .bloguserdate{
+        position:absolute;
+        bottom: 50px;
+      }
+      .month{
+        font-size: 15px;
+text-transform: capitalize;
+      }
+      .bloguser{
+        font-size: 15px;
+    /* right: 40px; */
+    position: absolute;
+    left: 322px;
+    text-transform: capitalize;
+      }
+      .blogdels{
+        background-color:lavender;
+      }
+      .details{
+        display: flex;
+       /* flex-direction: row; */
+        width:100%;
+        padding-right:160px;
+        padding-left:160px;
+        margin:50px;
+      }
+      .about1,.category1,.quick1,.useful1{
+      
+        padding:20px;
+        margin:20px;
+      }
+      .about,.category,.useful,.quick{
+        padding:5px;
+        font-size:20px;
+        text-transform: capitalize;
+        font-weight: 900;
+      }
+      .lists{
+        text-transform: capitalize;
+        font-weight:200;
+      }
+      .lists:hover{
+        margin-left:5px;
+        color:orangered;
+      }
+      .arrow{
+        padding:5px;
+        margin:5px;
+        font-size: 20px;
+        font-weight: 900;
+        color:orangered;
+      }
+      .icons{
+        margin-left:538px;
+    margin-right: 234px;
+    padding:5px;
+    margin-bottom:5px;
+      }
+      .fb{
+        background-color: black;
+        
+        border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+   
+      }
+      .fb:hover{
+        background-color: orangered;
+      }
+      .bi-twitter,.bi-facebook,.bi-instagram,.bi-whatsapp,.bi-linkedin{
+        color:white;
+      }
+      .footer{
+        padding:10px;
+        margin:10px;
+      }
+      .fb,.footer{
+transform: translate(562px ,0px);
+      }
+    .webdesigner{
+      color:orangered;
+      font-size: 15px;
+      text-transform: capitalize;
+    }
+
+    /* mediaquery.................. */
+    @media  screen and (max-width:1024px) and (min-width:1000px) {
+      .left{
+        left: 54px;
+      }
+      .right{
+        right:54px;
+      }
+.circle1{
+  right:0px;
+}
+.img2{
+  width: 70%;
+  right:72px;
+}
+.child{
+  padding:0px;
+}
+.eproducts{
+  grid-template-columns: 200px 200px 200px;
+}
+.img6{
+  width: 45%;
+}
+.gola{
+  left: 78px;
+}
+.prenext{
+  left: 165px;
+}
+.eproducts1{
+  padding-left: 88px;
+}
+.slide{
+  margin-left: -26px;
+  column-gap: 303px;
+  padding:0;
+}
+.contactprt{
+  
+  column-gap: 100px;
+}
+.address, .number, .email {
+   
+    padding: 10px;
+    margin: 10px;
+    
+    width: 236px;
+    height: 152px;
+}
+.mapcenter {
+   
+    column-gap: 315px;
+}
+.prtprogress {
+    
+    width: 409px; 
+}
+iframe{
+  width: 380px;
+    height: 356px;
+    border-radius: 6%;
+}
+
+.eproducts3 {
+    
+    grid-template-columns: 200px 200px;
+    column-gap: 216px;
+    row-gap: 15px;
+    padding: 50px;
+    margin: 40px;
+}
+.details {
+   
+    padding-left: 20px;
+    margin: 60px;
+}
+.icons {
+  margin-left: 400px;
+    margin-bottom: 20px;
+}
+.fb, .footer {
+    transform: translate(417px ,0px);
+}
+    }
+
+@media screen and (max-width:950px) and (min-width:850px) {
+      .left {
+    left: 35px;
+}
+.right {
+    right: 8px;
+}
+.circle1 {
+   
+    right: -7px;
+}
+.man1 {
+    transform: translateX(-198px);
+   
+}
+
+.img2 {
+  
+    width: 70%;
+}
+.below1, .below2 {
+    
+   
+    padding: 120px;
+    margin: 24px;
+   
+}
+.img5 {
+    width: 125%;
+}
+
+.eproducts {
+grid-template-columns: 200px 200px 200px;
+    column-gap: 97px;
+    row-gap: 80px;
+    padding: 12px;
+    margin: 10px;
+}
+.eproducts1 {
+   
+    padding-left:40px;
+    margin-bottom: -29px;
+    padding-bottom: 200px;
+}
+.gola{
+left:36px;
+bottom: 144px;
+}
+
+.prenext {
+   
+    bottom: 95px;
+    left: 135px;
+   
+}
+.slide {
+  padding-left: 1px;
+    margin-left: -28px;
+    padding: -48px;
+    padding-top: 50px;
+    /* margin: -25px; */
+    margin-top: 50px;
+    
+    grid-template-columns: 100px 100px;
+    column-gap: 355px;
+    
+}
+
+.slide1{
+  width: 345px;
+}
+.contactprt {
+      padding-top: 80px;
+    margin: -3px;
+    column-gap: 81px;
+}
+.address, .number, .email {
+   
+    padding-top: 28px;
+    margin: 10px;
+    
+    width: 215px;
+    height: 156px;
+}
+.mapcenter {
+   
+    column-gap: 300px;}
+
+.prtprogress {
+    width: 400px; 
+}
+iframe{
+    width: 337px;
+    height: 310px;
+    border-radius: 5%;
+}
+.eproducts3 {
+    
+    grid-template-columns: 200px 200px;
+}
+.details {
+   padding-left: 0px;
+    margin: 0px;
+}
+.icons {
+    margin-left: 308px;
+   
+    padding: 5px;
+    margin-bottom: 5px;
+    }
+    .fb, .footer {
+    transform: translate(330px ,0px);
+}
+    }
+
+    @media screen and (max-width:850px) and (min-width:600px) {
+
+      .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8 {
+    padding: 7px;  
+}
+.left{
+  left:5px;
+}
+.right{
+  right:12px;
+}
+.man1 {
+    transform: translateX(-140px);
+}
+.img1 {
+    width: 49%;
+    right: -8px;
+    z-index: 9999999;
+}
+.circle1 {
+    right: -78px;
+}
+.img2 {
+    width: 79%;
+    height: 81%;
+    top: 100px;
+    right: 12px;  
+}
+.circle2 {
+    right: -82px;
+}
+.img3 {
+    width: 88%;
+    top: 5px;
+    right: 48px;
+}
+.img4 {
+     width: 70%;
+    height: 100%;
+    top: 5px;
+    right: -40px;
+}
+.circle4 {
+    padding: 30px;
+    right: -9px;
+}
+.img5 {
+   top: -7px;
+   left: -122px;
+   width: 100%;
+   height: 100%;
+}
+.eproducts {
+    grid-template-columns: 200px 200px 200px;
+    column-gap:43px;
+    padding: 11px;
+}
+.first {
+    width: 200px;
+    height: 525px;
+}
+.img6 {
+    left: -5px;}
+    .onlycontent1 {
+    transform: translateX(-131px);}
+
+    .upto2, .fashion2 {
+    text-transform: capitalize;
+}
+.gola {
+    left: 55px;
+}
+.prenext {
+    left: 138px;
+}
+.eproducts1 {
+    padding-left: 0px;
+    margin-left: 200px;
+    }
+    .featuredclassimg{
+      width:400px;
+    }
+    .slide {
+   
+    grid-template-columns: 200px 200px;
+    column-gap: 150px;
+    row-gap: 20px;
+  }
+  .slide1 {
+    padding: 0px;
+    width: 300px;
+    height: 206px;
+  }
+  .fname {
+    left: 20px;
+  }
+  .contactprt {
+    padding: 0px;
+    margin: 40px;
+    column-gap:25px;
+}
+.address, .number, .email {
+   
+    padding-top: 34px;
+    width: 200px;
+    height: 150px;
+}
+.mapcenter {
+    
+    grid-template-columns: 200px;
+    column-gap: 200px;
+}
+.eproducts3 {
+   
+    grid-template-columns: 200px 200px;
+    column-gap:150px;
+    row-gap: 10px;
+    padding: 15px;
+    margin: 20px;
+}
+.blogpic{
+  width: 300px;
+  height: 499px;
+}
+.bloguser {
+    left: 265px;
+}
+
+.details {
+  padding-left: 0px;
+    margin: 14px;
+}
+.icons {
+    margin-left: 235px;
+}
+.fb, .footer {
+    transform: translate(260px,0px);
+}
+.about1, .category1, .quick1, .useful1 {
+    padding: 10px;
+    margin: 20px;
+}
+}
+
+    @media screen and (max-width:450px)and (min-width:220px) {
+      #home1{
+        display: block;
+        position: fixed;
+        top:0;
+        left: 0;
+        z-index:99999999999;
+        width: 100%;
+      }
+
+      #home{
+        display: none;
+      }
+      .head1{
+        display: flex;
+      padding:5px;
+        justify-content:flex-end;
+        position: relative;
+        background-color: white;
+      }
+      .bi-list{
+        color:black;
+        padding:10px;
+        margin:10px;
+      }
+      .bi-list:hover{
+        color:orangered;
+      }
+      #verticalhead {
+    position: absolute;
+    text-align: center;
+    top: 36px;
+    left: -1000px;
+    transition: 0.5s;
+    width: 100%;
+    margin-left:0px;
+    padding-top: 20px;
+    z-index: 99999999;
+    background-color: white;
+    padding-bottom: 20px;
+}  
+
+.left1{
+ 
+    float: right;
+    padding: -6px;
+    
+    padding-top: -5px;
+    margin-top: -13px;
+}
+  
+
+.bi-shield-fill-x:hover{
+  color: black;
+}
+
+
+
+
+
+
+
+
+  body::-webkit-scrollbar{
+    display: none;
+  }
+      .man1 {
+    transform: translate(0px,83px);
+  
+}
+.img1 {
+    
+    width: 37%;
+    height: 34%;
+    top: -15px;
+    right: 108px;
+}
+.circle1, .circle2, .circle3, .circle4 {
+  top: 146px;
+    width: 251px;
+    height: 270px;
+    left: 33px
+}
+
+.img2 {
+  width: 54%;
+    height: 27%;
+    top: 22px;
+    right: 120px;
+}
+.img3 {
+    width: 87%;
+    height: 32%;
+   
+    top: 5px;
+    right: 94px;
+}
+.img4 {
+    display: block;
+    width: 50%;
+    height: 34%;
+    top: 23px;
+}
+.onlycontent {
+    transform: translateX(-104px);
+}
+.child{
+  flex-direction: column;
+}
+.img5 {
+  
+    top: 89px;
+    left: -165px;
+    width: 76%;
+    height: 75%;
+}
+
+.fashion1{
+  font-size: 20px;
+}
+.logoimg {
+    width: 52px;}
+
+.logop{
+  font-size: 10px;
+}
+.prodnavbar {
+   
+    padding-left:5px;
+    margin-left: 3px;
+}
+.showall, .boys, .girlswoman, .shoesbg {
+    font-size: 5px;}
+
+.eproducts {
+   
+    grid-template-columns: 200px;
+    column-gap: 97px;
+    row-gap: 24px;
+    padding: 24px;
+    margin: 35px;
+}
+.onlycontent1 {
+    transform: translateX(-134px);
+}
+.fashion2 {
+    font-size: 10px;
+    font-weight: 900;
+}
+.img6 {
+   
+    top: 160px;
+    left: -17px;
+    width: 40%;
+    height: 52%;
+   }
+   .eproducts1 {
+    padding-left: 0px;
+    padding-bottom:126px;
+    margin-left: 45px;
+}
+.gola {
+    bottom: 65px;
+    left: 6px;
+}
+.prenext {
+    bottom: 34px;
+    left: 92px;
+}
+.slide {
+    padding: 3px;
+    margin: 5px;
+   
+    grid-template-columns: 200px;
+    column-gap: 450px;
+    row-gap: 4px;
+}
+.slide1 {
+    padding: 8px;
+    width: 250px}
+
+.contactprt {
+    padding: 30px;
+    margin: 30px;
+    grid-template-columns: 200px; 
+}
+.address, .number, .email {
+    width: 200px;
+    height: 133px;
+}
+.mapcenter {
+    grid-template-columns: 200px;  
+    margin-left: -34px;
+}
+.prtprogress {
+    background-color: aliceblue;
+    padding: -9px;
+    width: 250px;
+    margin: -7px;
+}
+iframe{
+  width: 300px;
+  height: 300px;
+}
+.eproducts3 {
+
+    grid-template-columns: 200px;
+    
+    padding: -13px;
+    margin:45px;
+}
+.blogpic {
+    width: 261px;
+}
+.bloguser {
+    left: 232px;
+}
+.details {
+   
+    flex-direction: column;
+    padding-left: 13px;
+    margin: 50px;
+}
+.about1, .category1, .quick1, .useful1 {
+    font-size: 19px;}
+    .icons {
+    margin-left: 46px;
+    padding: 5px;
+  margin-right: 0;}
+
+    .fb, .footer {
+    transform: translate(56px ,0px);
+    }
+  }
+
+
+    @media screen and (max-width:370px)and (min-width:200px) {
+      #home1{
+        display:block;
+      }
+
+      .circle1, .circle2, .circle3, .circle4 {
+    left: 7px;
+}
+.eproducts {
+    padding: 18px;
+    margin: 25px;
+}
+
+
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+      <header id="home">
+
+        <div id="head">
+         
+          
+          <div class="left"><div id="header1" class=" navbarhead1 div1"><i class="bi bi-bag-fill"></i>shop</div></div>
+        <div id="header2" class=" navbarhead2 div2">
+          <a href="#home">home</a></div>
+         <div id="header3" class=" navbarhead3 div3">
+          <a href="#products">products</a></div>
+         <div id="header4" class=" navbarhead4 div4">
+          <a href="#featured">featured</a></div>
+         <div id="header5" class=" navbarhead5 div5"><a href="#review">review</a></div>
+
+         <div id="header6" class=" navbarhead6 div6"><a href="#contact">contact</a></div>
+         <div id="header6" class=" navbarhead7 div6"><a href="#blog">blog</a></div>
+        
+          <div class="right"><div class="div7"><i class="bi bi-cart3"></i>
+            </div>
+          <div class="div8"><i class="bi bi-heart"></i></div></div>
+         </div>     
+  </header>
+
+<header id="home1">
+ <div class="head1">
+         
+          <div class="bars" id="listbar"><i class="bi bi-list"></i></div>
+         
+<div class="verticalhead" id="verticalhead">
+  <div class="left1" id="remover"><i class="bi bi-shield-fill-x"></i></div>
+  <div id="header2" class=" navbarhead2 div2">
+    <a href="#home">home</a></div>
+   <div id="header3" class=" navbarhead3 div3">
+    <a href="#products">products</a></div>
+   <div id="header4" class=" navbarhead4 div4">
+    <a href="#featured">featured</a></div>
+   <div id="header5" class=" navbarhead5 div5"><a href="#review">review</a></div>
+
+   <div id="header6" class=" navbarhead6 div6"><a href="#contact">contact</a></div>
+   <div id="header6" class=" navbarhead7 div6"><a href="#blog">blog</a></div>
+  
+</div>
+</header>
+
+
+<!-- swiper..................................... -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide  man">
+          <div class="man1">
+<div class="upto">upto 20% off</div>
+<div class="fashion">men's fashion</div>
+<button id="btn">shop now</button></div>
+<img src="man.png" class="img1">
+<span class="circle1"></span>
+        </div>
+        <div class="swiper-slide  woman">
+          <div class="man1">
+          <div class="upto">upto 20% off</div>
+<div class="fashion">women's fashion</div>
+<button id="btn">shop now</button></div>
+<img src="woman.png" class="img2">
+<span class="circle2"></span>
+        </div>
+        <div class="swiper-slide  girl">
+          <div class="man1">
+          <div class="upto">upto 20% off</div>
+<div class="fashion">kid's fashion</div>
+<button id="btn">shop now</button></div>
+<img src="girl.png" class="img3">
+<span class="circle3"></span>
+        </div>
+        <div class="swiper-slide  shoes">
+          <div class="man1">
+          <div class="upto">upto 20% off</div>
+<div class="fashion">shoes's fashion</div>
+<button id="btn">shop now</button></div>
+<img src="shoes.png" class="img4" >
+<span class="circle4"></span>
+        </div>
+        
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="child">
+    <div class="below1">
+    
+      <div class="onlycontent"><div class="upto1">super sale</div>
+<div class="fashion1">upto 20% off</div>
+<button id="btn1">shop now</button></div>
+<img src="sir.png" class="img5" width:"20px">
+</div>
+    <div class="below2">
+      
+      <div class="onlycontent"><div class="upto1">super sale</div>
+      <div class="fashion1">upto 20% off</div>
+      <button id="btn1">shop now</button></div>
+<img src="couple.png" class="img5" width="20px">
+</div>
+    </div>
+
+    <div class="logo">
+      <div class="logoimg"><img src="https://png.pngtree.com/thumb_back/fh260/background/20210424/pngtree-online-shopping-banner-poster-flyer-vector-image_662304.jpg" alt="logoshop" class="logoimg1">
+      <h3 class="logop">online shopping</h3></div>
+
+      <div class="logoimg"><img src="https://png.pngtree.com/thumb_back/fh260/background/20220610/pngtree-3d-shopping-promotion-purple-e-commerce-background-image_1412639.jpg" alt="logoshop" class="logoimg1">
+        <h3 class="logop">online shopping</h3></div>
+        <div class="logoimg"><img src="https://png.pngtree.com/png-vector/20200312/ourmid/pngtree-online-shopping-concept-with-giant-mobile-displaying-store-products-and-woman-png-image_2157873.jpg" alt="logoshop" class="logoimg1">
+          <h3 class="logop">online shopping</h3></div>
+
+          <div class="logoimg"><img src="https://png.pngtree.com/thumb_back/fh260/background/20210424/pngtree-food-and-packaging-online-shopping-delivery-service-truck-delivery-service-background-image_662111.jpg" class="logoimg1">
+            <h3 class="logop">online shopping</h3></div>
+    
+    <div class="logoimg"><img src="https://png.pngtree.com/template/20190716/ourmid/pngtree-simple-mobile-online-shopping-poster-image_227557.jpg" class="logoimg1">
+      <h3 class="logop">online shopping</h3></div>
+</div>
+<!-- exclusive product -->
+
+    <div class="exclusive" id="products">
+      <h1 class="h1">#exclusive products</h1>
+      <p class="p">upto 20 to 50 % off</p>
+    </div>
+    
+<div class="prodnavbar" >
+<div class="showall" id="showall">showall</div>
+<div class="boys" id="boysman">boys & men</div>
+<div class="girlswoman" id="girlswoman">girls & women</div>
+<div class="shoesbg" id="shoesbm">shoes</div>
+
+</div>
+
+<div class="eproducts">
+
+      <div class="first allshow  womangirls">  
+      <div class="productsprt">
+        <img src="woman1.jpg" alt="vishu" class="img11 ">
+  <div class="shop">
+          <div class="search"><i class="bi bi-search-heart"></i></div>
+          <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+
+        <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span>
+        </div>
+        
+          
+
+</div>
+
+      <div class="first allshow  boysman">  
+        <div class="productsprt">
+        <img src="man1.jpg" alt="vishu" class="img12">
+        <div class="shop">
+          <div class="search"><i class="bi bi-search-heart"></i></div>
+          <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+
+</div>
+      <div class="first allshow womangirls ">
+        <div class="productsprt">
+        <img src="kid1.jpg" alt="vishu" class="img13 ">
+        <div class="shop">
+          <div class="search"><i class="bi bi-search-heart"></i></div>
+          <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+
+</div>
+      
+      <div class="first allshow shoesbm ">  
+        <div class="productsprt">
+        <img src="shoes1.webp" alt="vishu" class="img14 ">
+        <div class="shop">
+          <div class="search"><i class="bi bi-search-heart"></i></div>
+          <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+
+</div>
+      
+      <div class="first allshow womangirls "> 
+        <div class="productsprt"> 
+        <img src="kid2.jpg" alt="vishu" class="img15 ">
+        <div class="shop">
+          <div class="search"><i class="bi bi-search-heart"></i></div>
+          <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+      
+      <div class="first allshow boysman ">  
+        <div class="productsprt">
+        <img src="man2.webp" alt="vishu" class="img16 ">
+        <div class="shop">
+          <div class="search"><i class="bi bi-search-heart"></i></div>
+          <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+     
+      <div class="first allshow  womangirls">  
+        <div class="productsprt">
+        <img src="woman2.webp" alt="vishu" class="img17 ">
+        <div class="shop">
+          <div class="search"><i class="bi bi-search-heart"></i></div>
+          <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+     
+      <div class="first allshow  boysman">  
+        <div class="productsprt">
+        <img src="man3.webp" alt="vishu" class="img18 ">
+        <div class="shop">
+          <div class="search"><i class="bi bi-search-heart"></i></div>
+          <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+     
+      <div class="first allshow  boysman">  
+        <div class="productsprt">
+        <img src="kid4.jpg" alt="vishu" class="img19 ">
+        <div class="shop">
+          <div class="search"><i class="bi bi-search-heart"></i></div>
+          <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+        <div class="first allshow  shoesbm">  
+          <div class="productsprt">
+          <img src="shoes2.webp" alt="vishu" class="img20 ">
+          <div class="shop">
+            <div class="search"><i class="bi bi-search-heart"></i></div>
+            <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+            <div class="eye"><i class="bi bi-eye-fill"></i></div>
+            <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+             <h1 class="productname"> product name</h1>
+          <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+          <div class="star">
+          <span><i class="bi bi-star-fill"></i></span>
+          <span><i class="bi bi-star-fill"></i></span>
+          <span><i class="bi bi-star-fill"></i></span>
+          <span><i class="bi bi-star-fill"></i></span>
+          <span><i class="bi bi-star"></i></span>
+          <span>(50)</span></div>
+</div>
+
+      <div class="first allshow womangirls ">  
+        <div class="productsprt">
+            <img src="woman3.jpg" alt="vishu" class="img21 ">
+            <div class="shop">
+              <div class="search"><i class="bi bi-search-heart"></i></div>
+              <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+              <div class="eye"><i class="bi bi-eye-fill"></i></div>
+              <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+        
+                <h1 class="productname"> product name</h1>
+            <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+            <div class="star">
+            <span><i class="bi bi-star-fill"></i></span>
+            <span><i class="bi bi-star-fill"></i></span>
+            <span><i class="bi bi-star-fill"></i></span>
+            <span><i class="bi bi-star-fill"></i></span>
+            <span><i class="bi bi-star"></i></span>
+            <span>(50)</span></div>
+</div>
+            <div class="first allshow shoesbm ">  
+              <div class="productsprt">
+              <img src="shoes.png" alt="vishu" class="img22 ">
+              <div class="shop">
+                <div class="search"><i class="bi bi-search-heart"></i></div>
+                <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+                <div class="eye"><i class="bi bi-eye-fill"></i></div>
+                <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   </div></div>
+              
+              <h1 class="productname"> product name</h1>
+              <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+              <div class="star">
+              <span><i class="bi bi-star-fill"></i></span>
+              <span><i class="bi bi-star-fill"></i></span>
+              <span><i class="bi bi-star-fill"></i></span>
+              <span><i class="bi bi-star-fill"></i></span>
+              <span><i class="bi bi-star"></i></span>
+              <span>(50)</span></div>
+</div>
+</div></div>
+    
+      <div class="summer">
+       
+        <div class="below3">
+    
+          <div class="onlycontent1">
+      <div class="upto2" style="color:orangered">new summer trend!</div>
+    <div class="fashion2">new summer collection</div>
+    <button id="btn1">shop now</button></div>
+    <img src="group.png" class="img6" >
+  </div>
+  </div>
+    
+
+    <!-- featured  -->
+     <div class="featured" id="featured">
+      <h1 class="h1">#featured</h1>
+      <p class="p">here is some feature of goods</p>
+     </div>
+
+<div class="eproducts1">
+
+  <div class="gola">
+    <span class="cir"></span>
+    <span class="cir"></span>
+    <span class="cir"></span>
+    <span class="cir"></span>
+    <span class="cir"></span>
+    <span class="cir"></span>
+    <span class="cir"></span>
+    <span class="cir"></span>
+    <span class="cir"></span>
+    <span class="cir"></span>
+   
+    
+  </div>
+
+
+  <div class="prenext">
+    <span class="pre psnt" onclick="prenext(-1)"><i class="bi bi-chevron-left"></i></span>
+    <span class="next psnt" onclick="prenext(1)"><i class="bi bi-chevron-right"></i></span></div>
+
+<div class="first  featuredclassimg">
+  <div class="featuredprt">
+      <img src="woman1.jpg" alt="vishu" class="img11 ">
+   
+     <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>   
+          </div></div>
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+
+<div class="first  featuredclassimg">
+  <div class="featuredprt">
+      <img src="man1.jpg" alt="vishu" class="img12 ">
+   
+     <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>   
+          </div></div>
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+
+      <div class="first  featuredclassimg">
+        <div class="featuredprt">
+      <img src="kid1.jpg" alt="vishu" class="img13 ">
+   
+     <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>   
+          </div></div>
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+      
+<div class="first  featuredclassimg">
+  <div class="featuredprt">
+      <img src="shoes1.webp" alt="vishu" class="img14 ">
+   
+     <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>   
+          </div></div>
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+      
+<div class="first  featuredclassimg">
+  <div class="featuredprt">
+      <img src="kid2.jpg" alt="vishu" class="img15 ">
+   
+     <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>   
+          </div></div>
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+
+
+
+
+  
+<div class="first  featuredclassimg">
+  <div class="featuredprt">
+      <img src="man2.webp" alt="vishu" class="img16 ">
+   
+     <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>   
+          </div></div>
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+     
+<div class="first  featuredclassimg">
+  <div class="featuredprt">
+      <img src="woman2.webp" alt="vishu" class="img17 ">
+   
+     <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>   
+          </div></div>
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+     
+<div class="first  featuredclassimg">
+  <div class="featuredprt">
+      <img src="man3.webp" alt="vishu" class="img18 ">
+   
+     <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>
+          </div>   </div>
+             <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div>
+     
+<div class="first  featuredclassimg">
+  <div class="featuredprt">
+       
+      <img src="kid4.jpg" alt="vishu" class="img19 ">
+   
+     <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>   
+        </div>
+          <h1 class="productname"> product name</h1>
+        <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+        <div class="star">
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star-fill"></i></span>
+        <span><i class="bi bi-star"></i></span>
+        <span>(50)</span></div>
+</div></div>
+
+<div class="first  featuredclassimg">
+          <div class="featuredprt">
+         <img src="shoes2.webp" alt="vishu" class="img20 ">
+     
+    <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i><div>   
+               </div></div>
+          <h1 class="productname"> product name</h1>
+          <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+          <div class="star">
+          <span><i class="bi bi-star-fill"></i></span>
+          <span><i class="bi bi-star-fill"></i></span>
+          <span><i class="bi bi-star-fill"></i></span>
+          <span><i class="bi bi-star-fill"></i></span>
+          <span><i class="bi bi-star"></i></span>
+          <span>(50)</span></div>
+</div></div></div></div>
+<!-- <div class="first  featuredclassimg">
+            <div class="featuredprt">
+            <img src="woman3.jpg" alt="vishu" class="img21 ">
+      <div class="shop1">
+          <div class="search1"><i class="bi bi-search-heart"></i></div>
+          <div class="cart1"><i class="bi bi-basket2-fill"></i></div>
+          <div class="eye1"><i class="bi bi-eye-fill"></i></div>
+          <div class="heart1"><i class="bi bi-balloon-heart-fill"></i></div>   
+</div></div>
+            <h1 class="productname"> product name</h1>
+            <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+            <div class="star">
+            <span><i class="bi bi-star-fill"></i></span>
+            <span><i class="bi bi-star-fill"></i></span>
+            <span><i class="bi bi-star-fill"></i></span>
+            <span><i class="bi bi-star-fill"></i></span>
+            <span><i class="bi bi-star"></i></span>
+            <span>(50)</span></div>
+            
+  </div>
+
+ <div class="first  featuredclassimg">
+           <div class="featuredprt">
+            <img src="shoes.png" alt="vishu" class="img22 ">
+            <div class="shop1">
+              <div class="search"><i class="bi bi-search-heart"></i></div>
+              <div class="cart"><i class="bi bi-basket2-fill"></i></div>
+              <div class="eye"><i class="bi bi-eye-fill"></i></div>
+              <div class="heart"><i class="bi bi-balloon-heart-fill"></i></div>   
+            </div></div>
+              <h1 class="productname"> product name</h1>
+              <p class="p1"><span class="doller"> $20.00</span><span class="strong">$<del>25.00</del></span><span class=doller1>20% off</span></p>
+              <div class="star">
+              <span><i class="bi bi-star-fill"></i></span>
+              <span><i class="bi bi-star-fill"></i></span>
+              <span><i class="bi bi-star-fill"></i></span>
+              <span><i class="bi bi-star-fill"></i></span>
+              <span><i class="bi bi-star"></i></span>
+              <span>(50)</span></div>
+   </div>
+   
+  </div></div></div> -->
+
+              <!-- review -->
+
+
+     <div class="review" id="review">
+      <h1 class="h1">#client's review</h1>
+      <p class="p">here is the review of clients</p>
+     </div>
+
+<div class="slide">
+  <div class="slide1">
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquid.</p>
+    <img src="man1.jpg" alt="photo" class="smallpic">
+    <span class="fname">
+    <span class="fname1">the rock</span><br>
+    <span class="fname2">happy client</span></span>
+  </div>
+  
+  <div class="slide1">
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquid.</p>
+    <img src="man4.webp" alt="photo" class="smallpic">
+    <span class="fname">
+    <span class="fname1">the rock</span><br>
+    <span class="fname2">happy client</span></span>
+  </div>
+  <div class="slide1">
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquid.</p>
+    <img src="kid4.jpg" alt="photo" class="smallpic">
+    <span class="fname">
+    <span class="fname1">the rock</span><br>
+    <span class="fname2">happy client</span></span>
+  </div>
+  <div class="slide1">
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquid.</p>
+    <img src="woman1.jpg" alt="photo" class="smallpic">
+    <span class="fname">
+    <span class="fname1">the rock</span><br>
+    <span class="fname2">happy client</span></span>
+  </div>
+  <div class="slide1">
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquid.</p>
+    <img src="woman3.jpg" alt="photo" class="smallpic">
+    <span class="fname">
+    <span class="fname1">the rock</span><br>
+    <span class="fname2">happy client</span></span>
+  </div>
+  <div class="slide1">
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquid.</p>
+    <img src="woman2.webp" alt="photo" class="smallpic">
+    <span class="fname">
+    <span class="fname1">the rock</span><br>
+    <span class="fname2">happy client</span></span>
+  </div>
+  <div class="slide1">
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquid.</p>
+    <img src="man3.webp" alt="photo" class="smallpic">
+    <span class="fname">
+    <span class="fname1">the rock</span><br>
+    <span class="fname2">happy client</span></span>
+  </div>
+</div>
+ 
+<!-- contact -->
+
+<div class="contactus" id="contact">
+      <h1 class="h1">#contact us</h1>
+      <p class="p">you can contact to us</p></div>
+<div class="contactprt">
+      
+      <div class="address">
+        <div class="Name"><i class="bi bi-geo-alt-fill"></i>
+          <div class="Name1">address</div>
+
+        <div class="Name2">kapasada dist durg (C.G) thana kumhari post office kapasada</div></div></div>
+
+        <div class="number">
+         
+        <div class="Name"><i class="bi bi-telephone-fill"></i>
+          <div class="Name1">phone</div>
+        <div class="Name2">9644111432</div></div>
+      </div>
+
+        <div class="email">
+        <div class="Name"><i class="bi bi-envelope-fill"></i><div class="Name1">email</div>
+            <div class="Name2">sahuvishu26@gmail.com</div></div>
+</div>
+
+<div class="mapcenter">
+      <div class="prtprogress">
+        <div class="progress">
+
+            <div class="msg">message me</div>
+          <input type="text" value="fullname">
+          <input type="email" value="enter your email">
+          <input type="text" value="enter your number">
+      <textarea>enter your message</textarea>
+      <button class="btn5">send message</button>
+    </div>
+    </div>
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3141.1503467912735!2d81.5049166168626!3d21.30672564498957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a291fcf2c15fefb%3A0x3f01aad322026949!2z4KS54KWH4KSu4KS-IOCkleCljeCksuCkvuCkpSDgpLjgpY3gpJ_gpYvgpLDgpY3gpLgg4KSV4KSq4KS44KSm4KS-!5e1!3m2!1sen!2sin!4v1659195982708!5m2!1sen!2sin" width="550" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+</div></div>
+
+
+
+
+  <!-- blog........................ -->
+    
+
+
+<div class="blog" id="blog">
+      <h1 class="h1">#blog</h1>
+      <p class="p">here is the blog of user</p>
+</div>
+
+<div class="eproducts3">
+
+<div class="first blogpic">
+        <img src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166__340.jpg" alt="vishu" class="imgb">
+              <h1 class="productname"> blog title</h1>
+        <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+        <button class="btnblog">read more</button>
+        <hr>
+        <div class="bloguserdate">
+          <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+          <span class="bloguser"> <span><i class="bi bi-person-plus-fill"></i></span>user</span></div>
+</div>
+<div class="first blogpic">
+        <img src="https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445__340.jpg" alt="vishu" class="imgb">
+        <h1 class="productname"> blog title</h1>
+        <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+        <button class="btnblog">read more</button>
+        <hr>
+        <div class="bloguserdate">
+        <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+        <span class="bloguser"> <i class="bi bi-person-plus-fill"></i> user</span></div>
+
+</div>
+<div class="first blogpic">
+        <img src="https://cdn.pixabay.com/photo/2016/03/23/04/01/woman-1274056__340.jpg" alt="vishu" class="imgb">
+        <h1 class="productname"> blog title</h1>
+        <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+        <button class="btnblog">read more</button>
+        <hr>
+        <div class="bloguserdate">
+          <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+          <span class="bloguser"> <i class="bi bi-person-plus-fill"></i> user</span></div>
+</div>
+      
+      <div class="first blogpic">
+        <img src="https://cdn.pixabay.com/photo/2017/02/04/12/25/man-2037255__340.jpg" alt="vishu" class="imgb">
+    
+        <h1 class="productname"> blog title</h1>
+        <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+        <button class="btnblog">read more</button>
+        <hr>
+        <div class="bloguserdate">
+          <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+          <span class="bloguser"> <i class="bi bi-person-plus-fill"></i> user</span></div>
+</div>
+      <div class="first blogpic">
+        <img src="https://cdn.pixabay.com/photo/2017/03/27/13/28/man-2178721__340.jpg" alt="vishu" class="imgb">
+        <h1 class="productname"> blog title</h1>
+        <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+        <button class="btnblog">read more</button>
+        <hr>
+        <div class="bloguserdate">
+          <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+          <span class="bloguser"> <i class="bi bi-person-plus-fill"></i> user</span></div>
+</div>
+      
+<div class="first blogpic">
+        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/30/entrepreneur-593371__340.jpg" alt="vishu" class="imgb"> 
+           <h1 class="productname"> blog title</h1>
+        <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+        <button class="btnblog">read more</button>
+        <hr>
+        <div class="bloguserdate">
+          <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+          <span class="bloguser"> <i class="bi bi-person-plus-fill"></i> user</span></div>
+</div>
+     
+ <div class="first blogpic">
+        <img src="https://cdn.pixabay.com/photo/2015/09/13/03/41/man-937665__340.jpg" alt="vishu" class="imgb">
+    
+        <h1 class="productname"> blog title</h1>
+        <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+        <button class="btnblog">read more</button>
+        <hr>
+        <div class="bloguserdate">
+          <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+          <span class="bloguser"> <i class="bi bi-person-plus-fill"></i> user</span></div>
+</div>
+     
+<div class="first blogpic">
+        <img src="
+        https://cdn.pixabay.com/photo/2014/04/26/04/25/woman-332278__340.jpg" alt="vishu" class="imgb"> 
+           <h1 class="productname"> blog title</h1>
+        <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+        <button class="btnblog">read more</button>
+        <hr>
+        <div class="bloguserdate">
+          <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+          <span class="bloguser"> <i class="bi bi-person-plus-fill"></i> user</span></div>
+</div>
+     
+      <div class="first blogpic">
+        <img src="
+        https://cdn.pixabay.com/photo/2015/01/08/18/30/entrepreneur-593371__340.jpg" alt="vishu" class="imgb">
+        <h1 class="productname"> blog title</h1>
+        <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+        <button class="btnblog">read more</button>
+        <hr>
+        <div class="bloguserdate">
+          <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+          <span class="bloguser"> <i class="bi bi-person-plus-fill"></i> user</span></div>
+  </div>
+        <div class="first blogpic">
+          <img src="https://cdn.pixabay.com/photo/2016/11/29/01/34/man-1866574__340.jpg
+          " alt="vishu" class="imgb">
+      
+          <h1 class="productname"> blog title</h1>
+          <p class="p1">this is the best shop you can select any goods and you will get the offer 20%</p>
+          <button class="btnblog">read more</button>
+          <hr>
+          <div class="bloguserdate">
+            <span class="month"><i class="bi bi-calendar2-plus-fill"></i>2nd june 2022</span>
+            <span class="bloguser"> <i class="bi bi-person-plus-fill"></i> user</span></div>
+    </div>
+  </div>
+            
+<div class="blogdels">
+
+ <div class="details">
+
+   <div class="about1">  
+  <div class="about">about us</div>
+  
+  
+  
+ <span class="lists">kapasada dist durg (c.g).</span><br>
+ </div>
+
+<div class="category1">
+      <div class="category">category</div>
+      <span class="arrow">&#8594</span><span class="lists">mans</span><br>
+      <span class="arrow">&#8594</span><span class="lists">womans</span><br>
+      <span class="arrow">&#8594</span><span class="lists">kids</span><br>
+      <span class="arrow">&#8594</span><span class="lists">shoes</span><br>
+      <span class="arrow">&#8594</span><span class="lists">new offer</span><br>
+     </div>
+
+      <div class="quick1">
+      <div class="quick">quick links</div>
+      <span class="arrow">&#8594</span><span class="lists"><a href="#home">home</a></span><br>
+      <span class="arrow">&#8594</span><span class="lists"><a href="#products">products</a></span><br>
+      <span class="arrow">&#8594</span><span class="lists"><a href="#featured">featured</a></span><br>
+      <span class="arrow">&#8594</span><span class="lists"><a href="#review">review</a></span><br>
+      <span class="arrow">&#8594</span><span class="lists"><a href="#contact">contact</a></span><br>
+      <span class="arrow">&#8594</span><span class="lists"><a href="#blog">blogs</a></span><br>
+      </div>
+
+     <div class="useful1">
+      <div class="useful">useful links</div>
+      <span class="arrow">&#8594</span><span class="lists">my account</span><br>
+      <span class="arrow">&#8594</span><span class="lists">my orders</span><br>
+      <span class="arrow">&#8594</span><span class="lists">my listing</span><br>
+      <span class="arrow">&#8594</span><span class="lists">shell now</span><br>
+      <span class="arrow">&#8594</span><span class="lists">new offers</span><br>
+    </div>
+</div>
+
+    <div class="icons">
+    <span class="fb"><i class="bi bi-facebook"></i></span>
+    <span class="fb"><i class="bi bi-whatsapp"></i></span>
+    <span class="fb"><i class="bi bi-instagram"></i></span>
+    <span class="fb"><i class="bi bi-twitter"></i></span>
+    <span class="fb"><i class="bi bi-linkedin"></i></span>
+  </div>
+    
+    <hr style="background-color:orangered">
+    <div class="footer">@2022 made by <span class=webdesigner>mr.vishu sahu</span></div>
+  
+
+</div>
+  
+  
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+ 
+
+    <!-- Initialize Swiper -->
+    <script>
+      
+let listbar=document.getElementById('listbar'),
+verticalhead=document.getElementById('verticalhead'),
+remover=document.getElementById('remover');
+
+listbar.onclick=()=>{
+  verticalhead.style.left="0px";
+}
+remover.addEventListener('click',()=>{
+  verticalhead.style.left="-1000px";
+  verticalhead.style.transition='0.5s';
+})
+
+
+
+
+
+
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      // let prenext1=document.querySelectorAll('.psnt');
+      
+      let showall1=document.getElementById('showall'),
+      boysman1=document.getElementById('boysman'),
+      girlswoman1=document.getElementById('girlswoman'),
+      shoesbm1=document.getElementById('shoesbm'),
+      showall2=document.querySelectorAll('.allshow'),
+      boysman2=document.querySelectorAll('.boysman'),
+      girlswoman2=document.querySelectorAll('.womangirls'),
+      shoesbm2=document.querySelectorAll('.shoesbm'),
+      i;
+     
+      // featured eproducts ............
+
+      let flag=0;
+      function prenext(x){
+        flag =flag+x;
+        run(flag);
+      }
+      run(flag);
+      
+      function run(num){
+      let fci1=document.getElementsByClassName('featuredclassimg');
+      
+       let cir=document.getElementsByClassName("cir");
+      
+     if(num==fci1.length){
+      num=0;
+      flag=0;
+     }
+    
+    if(num<0){
+      num=fci1.length-1;
+      flag=fci1.length-1;
+    }
+    for(let z of cir){
+z.style.background="white";
+    }
+    for(let y of fci1){
+y.style.display="none";
+    }
+   
+    fci1[num].style.display="block";
+    
+    cir[num].style.backgroundColor="rgba(0,0,0,0.5)";
+  }
+   
+
+
+   
+
+   
+
+
+
+
+
+    // eproducts....................
+
+    showall1.onclick=()=>{
+for( i=0;i<showall2.length;i++){
+showall2[i].style.display="block";
+}
+
+    }
+    boysman1.addEventListener('click',()=>{
+     
+     
+      for( i=0; i<boysman2.length;i++){
+boysman2[i].style.display="block";
+for( i=0; i<girlswoman2.length;i++){
+girlswoman2[i].style.display="none";
+      }
+      for( i=0; i<shoesbm2.length;i++){
+shoesbm2[i].style.display="none";
+      }
+      }
+    })
+    girlswoman1.addEventListener('click',()=>{
+      for( i=0; i<girlswoman2.length;i++){
+girlswoman2[i].style.display="block";
+      }
+      for( i=0; i<boysman2.length;i++){
+boysman2[i].style.display="none";
+      }
+      for( i=0; i<shoesbm2.length;i++){
+shoesbm2[i].style.display="none";
+      }
+    })
+    shoesbm1.onclick=()=>{
+      for( i=0; i<girlswoman2.length;i++){
+girlswoman2[i].style.display="none";
+      }
+      for( i=0; i<boysman2.length;i++){
+boysman2[i].style.display="none";
+      }
+      for( i=0; i<shoesbm2.length;i++){
+shoesbm2[i].style.display="block";
+      }
+    }
+      
+    </script>
+  </body>
+</html>
