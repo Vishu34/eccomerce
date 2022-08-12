@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Swiper demo</title>
+    <title>ecommerce websit</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
@@ -13,6 +13,10 @@
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <!-- Demo styles -->
     <style>
        body,html{
@@ -99,6 +103,17 @@ border-radius:20px;
         position:absolute;
         top:2px;
         left:128px;
+        animation: left22 2s linear infinite;
+        animation-timing-function: ease-in-out;
+        
+      }
+      @keyframes left22 {
+        0%{
+          opacity: 0;
+        }
+        100%{
+          opacity:0.9;       }
+        
       }
  .right{
   display:inline-flex;
@@ -109,7 +124,7 @@ border-radius:20px;
  }
  .div1,.div2,.div3,.div4,.div5,.div6,.div7,.div8{  
   font-size: 20px;  
-  padding:15px;
+  padding:10px;
   margin:5px;
   text-transform: capitalize;
  }
@@ -118,6 +133,9 @@ border-radius:20px;
         justify-content: center;
       
       }
+:is(.div2,.div3,.div4,.div5,.div6):hover{
+  text-shadow: 5px -3px 10px cyan, 0px 7px 10px orchid
+}
     a{
       text-decoration: none;
     } 
@@ -174,16 +192,34 @@ font-size: 50px;
 font-weight: 900;
       }
       #btn{
-        background-color:orangered;
+        border-radius: 50px;
+        box-shadow: 15px 1px 1px 1px orangered, -15px 1px 1px 1px orangered;
+        
         border:none;
         outline: none;
-        padding:15px;
+        padding:20px;
         margin:10px;
-        color:white;
+        color:black;
+        background-color: lavender;
+        transform: scale(1);
         font-size: 25px;
+        animation: btn22 5s linear ;
+        animation-iteration-count: 3;
+        transition: 0.5s;
       }
+      @keyframes btn22 {
+0%{
+  transform: scale(0.3);
+}
+100%{
+  transform: scale(1);
+}}
       #btn:hover{
-        background-color: black;
+        transform: scale(1.3);
+        transition: 0.5s;
+        color: white;
+        background-color:orangered;
+        box-shadow: 0px 1px 17px 4px orangered;
       }
 .man{
   background-color:skyblue;
@@ -352,6 +388,7 @@ transform: scale(1.5);
         transform: scale(1.2);
       }
       .below1,.below2{
+        box-shadow: 10px 14px 24px -7px cyan, -10px -10px 32px -7px orchid;
        /* overflow: hidden; */
         /* width:50%; */
         position: relative;
@@ -361,7 +398,22 @@ transform: scale(1.5);
       }
       .onlycontent{
 transform: translateX(112px);
+transition:transform 1s linear;
       }
+      .child:hover .onlycontent{
+
+       animation: only12 2s linear;
+      }
+@keyframes only12 {
+0%{
+  opacity: 0;
+  transform: translatex(0px);
+}
+100%{
+  opacity: 0.9;
+  transform: translateX(112px);
+}
+}
       .onlycontent1{
 transform: translateX(-200px);
       }
@@ -396,6 +448,8 @@ font-size: 30px;
 font-weight: 900;
       }
       #btn1{
+        border-radius: 50px;
+        box-shadow: -6px 6px 34px 10px lavender;
         background-color:orangered;
         border:none;
         outline: none;
@@ -403,6 +457,15 @@ font-weight: 900;
         margin:10px;
         color:white;
         font-size: 20px;
+        animation: btn11 5s linear infinite;
+      }
+      @keyframes btn11 {
+0%{
+  transform: scale(0.3);
+}
+100%{
+  transform: scale(1);
+}
       }
       #btn1:hover{
         background-color: black;
@@ -424,18 +487,43 @@ font-weight: 900;
 
       }
       .showall,.boys,.girlswoman,.shoesbg{
+        box-shadow: -7px 1px 1px 1px cyan;
         font-size: 15px;
+        z-index:99;
     font-weight: 900;
     text-transform: capitalize;
-    border: 1px solid black;
-    border-radius: 37%;
+    border: 1px solid aqua;
+    border-radius:50px;
     padding: 9px;
     margin: 8px;
+    transition: 0.5s;
+    cursor: pointer;
       }
+     
       :is(.showall,.boys,.girlswoman,.shoesbg):hover{
-background-color: orangered;
+background-color: aqua;
+box-shadow: 1px 1px 17px 5px cyan;
 color: white;
       }
+
+@keyframes girlswoman {
+  0%{
+    transform: scale(0.3);
+  }
+  100%{
+    transform: scale(1);
+  }
+  
+}
+@keyframes shoesbm {
+  0%{
+    transform: scale(0.3);
+  }
+  100%{
+    transform: scale(1);
+  }
+  
+}
       .h1 , .p{
         padding:15px;
         font-weight: 900;
@@ -456,7 +544,7 @@ margin:10px;
         padding:10px;
         margin:5px;
         background-color:white;
-        box-shadow: 10px 10px 7px -7px black,-10px -10px 7px -7px black;
+        box-shadow: 10px 10px 7px -7px cyan, -10px -10px 7px -7px orchid;
        width:250px;
        height: 500px;
       
@@ -552,9 +640,12 @@ color:white;
 }
 .cir,.cir1{
   background-color:white;
+  box-shadow: 0px 1px 8px 2px cyan, 0px -1px 8px 2px orchid;
+  border-top: 2px solid aqua;
+    border-bottom: 2px solid orchid;
   height: 5px;
   width: 5px;
-  border:1px solid black;
+  
   border-radius: 50%;
   padding:5px;
   margin:5px;
@@ -570,6 +661,7 @@ color:white;
   color:white;
 }
 .pre{
+  border-radius: 21%;
   padding: 5px;
     margin: 5px;
   background-color:orangered;
@@ -577,6 +669,7 @@ color:white;
 }
 
 .next{
+  border-radius: 21%;
   padding: 5px;
     margin: 5px;
   background-color: orangered;
@@ -631,7 +724,7 @@ opacity: 0.9;
         margin:40px;
         width:400px;
        
-        box-shadow: 10px 10px 7px -7px black,-10px -10px 7px -7px black;
+        box-shadow: 10px 10px 7px -7px orchid, -10px -10px 7px -7px cyan;
 position: relative;      }
 
       .content{
@@ -676,15 +769,18 @@ position: relative;      }
         column-gap: 215px;
       }
       .bi-geo-alt-fill,.bi-telephone-fill,.bi-envelope-fill{
+       
         border-radius:50%;
-        border:2px solid black;
+       
         padding:10px;
         margin:5px;
-        color:black;
+        background-color: aquamarine;
+        color:white;
       }
       
       :is(.bi-geo-alt-fill,.bi-telephone-fill,.bi-envelope-fill):hover{
-        background-color:orangered;
+        background-color:aqua;
+        box-shadow: 1px 1px 17px 5px cyan;
         color: white;
       }
       .Name1{
@@ -697,7 +793,8 @@ position: relative;      }
         border-radius: 5%;
       }
       .address,.number,.email{
-        border:2px solid black;
+        box-shadow: 1px 1px 17px 5px cyan;
+        border:2px solid orchid;
         padding-top: 15px;
     padding-left: 5px;
     padding-right: 5px;
@@ -707,6 +804,7 @@ position: relative;      }
         height: 200px;
       }
       .prtprogress{
+        box-shadow: 10px 10px 7px -7px orchid, -10px -10px 7px -7px aqua;
         background-color:aliceblue;
         padding:25px;
         margin:20px;
@@ -720,12 +818,12 @@ position: relative;      }
         color:black;
       }
       input ,textarea{
+        box-shadow: 1px 1px 3px 1px aqua;
         width:100%;
         padding:5px;
         margin:5px;
         outline: none;
         border:none;
-        border:1px solid black;
         border-radius: 20px;
 font-size: 15px;
       }
@@ -736,6 +834,7 @@ font-size: 15px;
         padding-bottom: 50px;
       }
    .btn5{
+    color:lavender;
         text-transform: capitalize;
         font-size: 20px;
         font-weight: 900;
@@ -744,11 +843,11 @@ font-size: 15px;
         border-radius:10px;
         border: none;
         outline: none;
-        background-color:orangered;
+        background-color:orchid;
       }
    .btn5:hover{
-        color:white
-      }
+        color:white;
+        box-shadow: 1px 1px 29px 9px orchid;     }
       .mapcenter{
         display: grid;
         grid-template-columns: 200px 200px;
@@ -787,19 +886,22 @@ font-size: 15px;
       
       }
       .btnblog{
-        background-color: orangered;
-        color:white;
+        box-shadow: -12px 0px 1px 1px orchid, 6px 3px 1px 1px orchid;
         padding: 14px;
+        background-color: white;
     margin: 10px;
     text-transform: capitalize;
     border: none;
     outline: none;
     border-radius: 10%;
     font-size: 15px;
+    font-weight: bold;
 
       }
       .btnblog:hover{
-        background-color: black;
+       color:white;
+       background-color: orchid;
+       box-shadow: 1px 1px 25px 5px orchid;
       }
       .bloguserdate{
         position:absolute;
@@ -869,6 +971,7 @@ text-transform: capitalize;
       }
       .fb:hover{
         background-color: orangered;
+        box-shadow: 1px 1px 25px 5px orangered;
       }
       .bi-twitter,.bi-facebook,.bi-instagram,.bi-whatsapp,.bi-linkedin{
         color:white;
@@ -1249,7 +1352,7 @@ iframe{
       padding:5px;
         justify-content:flex-end;
         position: relative;
-        background-color: white;
+        
       }
       .bi-list{
         color:black;
@@ -1494,7 +1597,7 @@ iframe{
           
           <div class="left"><div id="header1" class=" navbarhead1 div1"><i class="bi bi-bag-fill"></i>shop</div></div>
         <div id="header2" class=" navbarhead2 div2">
-          <a href="#home">home</a></div>
+          <a href="#home2">home</a></div>
          <div id="header3" class=" navbarhead3 div3">
           <a href="#products">products</a></div>
          <div id="header4" class=" navbarhead4 div4">
@@ -1533,11 +1636,13 @@ iframe{
 
 
 <!-- swiper..................................... -->
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper 
+    "id='#home2'>
       <div class="swiper-wrapper">
-        <div class="swiper-slide  man">
-          <div class="man1">
-<div class="upto">upto 20% off</div>
+        <div class="swiper-slide man" >
+          <div class="man1 wow animate__animated animate__swing">
+<div class="upto
+">upto 20% off</div>
 <div class="fashion">men's fashion</div>
 <button id="btn">shop now</button></div>
 <img src="man.png" class="img1">
@@ -1574,15 +1679,15 @@ iframe{
       <div class="swiper-pagination"></div>
     </div>
 
-    <div class="child">
-    <div class="below1">
+    <div class="child" data-aos="fade-down">
+    <div class="below1 animated wow fadeInRightBig">
     
       <div class="onlycontent"><div class="upto1">super sale</div>
 <div class="fashion1">upto 20% off</div>
 <button id="btn1">shop now</button></div>
 <img src="sir.png" class="img5" width:"20px">
 </div>
-    <div class="below2">
+    <div class="below2 ">
       
       <div class="onlycontent"><div class="upto1">super sale</div>
       <div class="fashion1">upto 20% off</div>
@@ -1591,8 +1696,8 @@ iframe{
 </div>
     </div>
 
-    <div class="logo">
-      <div class="logoimg"><img src="https://png.pngtree.com/thumb_back/fh260/background/20210424/pngtree-online-shopping-banner-poster-flyer-vector-image_662304.jpg" alt="logoshop" class="logoimg1">
+    <div class="logo " >
+      <div class="logoimg" ><img src="https://png.pngtree.com/thumb_back/fh260/background/20210424/pngtree-online-shopping-banner-poster-flyer-vector-image_662304.jpg" alt="logoshop" class="logoimg1">
       <h3 class="logop">online shopping</h3></div>
 
       <div class="logoimg"><img src="https://png.pngtree.com/thumb_back/fh260/background/20220610/pngtree-3d-shopping-promotion-purple-e-commerce-background-image_1412639.jpg" alt="logoshop" class="logoimg1">
@@ -1613,7 +1718,7 @@ iframe{
       <p class="p">upto 20 to 50 % off</p>
     </div>
     
-<div class="prodnavbar" >
+<div class="prodnavbar">
 <div class="showall" id="showall">showall</div>
 <div class="boys" id="boysman">boys & men</div>
 <div class="girlswoman" id="girlswoman">girls & women</div>
@@ -2175,7 +2280,7 @@ iframe{
       <p class="p">here is the review of clients</p>
      </div>
 
-<div class="slide">
+<div class="slide ">
   <div class="slide1">
     <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquid.</p>
     <img src="man1.jpg" alt="photo" class="smallpic">
@@ -2453,14 +2558,15 @@ iframe{
 </div>
   
   
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
  
 
-    <!-- Initialize Swiper -->
-    <script>
-      
+<script>
+  
+              new WOW().init();
+              
 let listbar=document.getElementById('listbar'),
 verticalhead=document.getElementById('verticalhead'),
 remover=document.getElementById('remover');
@@ -2531,8 +2637,10 @@ y.style.display="none";
     }
    
     fci1[num].style.display="block";
+    fci1[num].style.animation="shoesbm 1s linear";
     
-    cir[num].style.backgroundColor="rgba(0,0,0,0.5)";
+    cir[num].style.backgroundColor="aqua";
+    
   }
    
 
@@ -2550,6 +2658,8 @@ y.style.display="none";
     showall1.onclick=()=>{
 for( i=0;i<showall2.length;i++){
 showall2[i].style.display="block";
+showall2[i].style.animation="shoesbm 1s linear";
+
 }
 
     }
@@ -2558,6 +2668,9 @@ showall2[i].style.display="block";
      
       for( i=0; i<boysman2.length;i++){
 boysman2[i].style.display="block";
+boysman2[i].style.transition='1.5s';
+boysman2[i].style.animation="shoesbm 1s linear";
+
 for( i=0; i<girlswoman2.length;i++){
 girlswoman2[i].style.display="none";
       }
@@ -2569,6 +2682,8 @@ shoesbm2[i].style.display="none";
     girlswoman1.addEventListener('click',()=>{
       for( i=0; i<girlswoman2.length;i++){
 girlswoman2[i].style.display="block";
+girlswoman2[i].style.transition='1.5s';
+girlswoman2[i].style.animation="shoesbm 1s linear";
       }
       for( i=0; i<boysman2.length;i++){
 boysman2[i].style.display="none";
@@ -2586,9 +2701,15 @@ boysman2[i].style.display="none";
       }
       for( i=0; i<shoesbm2.length;i++){
 shoesbm2[i].style.display="block";
+shoesbm2[i].style.transition='1.5s';
+shoesbm2[i].style.animation="shoesbm 1s linear";
+
+
       }
     }
-      
+    
+    
+             
     </script>
   </body>
 </html>
